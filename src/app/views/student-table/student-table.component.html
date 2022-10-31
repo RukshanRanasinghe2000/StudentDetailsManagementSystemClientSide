@@ -1,53 +1,56 @@
 <header class="row">
-  <div class ="col-lg-6">
+  <div class="col-lg-6">
     <h1>All Students</h1>
   </div>
-  <div class = "col-lg-6 text-right">
-    <ol class = "breadcrumb float-end bg-transparent">
+  <div class="col-lg-6 text-right">
+    <ol class="breadcrumb float-end bg-transparent">
       <li class="breadcrumb-item">Student</li>
       <li class="breadcrumb-item active" aria-current="page">Show All Student</li>
     </ol>
   </div>
 </header>
 <form [formGroup]="studentSearchForm">
-<div class="row">
-  <div class="col-lg-4">
-    <mat-form-field  appearance="outline" class="example-form-field">
-      <mat-label >Calling Name</mat-label>
-      <input (keyup)="search()" formControlName="name" matInput type="text">
-    </mat-form-field>
+  <div class="row">
+    <div class="col-lg-4">
+      <mat-form-field appearance="outline" class="example-form-field">
+        <mat-label>Calling Name</mat-label>
+        <input (keyup)="search()" formControlName="name" matInput type="text">
+      </mat-form-field>
+
+    </div>
+    <div class="col-lg-4">
+      <mat-form-field appearance="outline" class="example-form-field">
+        <mat-label>Index</mat-label>
+        <input (keyup)="search()" formControlName="index" matInput type="text">
+      </mat-form-field>
+    </div>
+    <div class="col-lg-4">
+      <mat-form-field appearance="outline">
+        <mat-label>Gender</mat-label>
+        <mat-select (selectionChange)="search()" formControlName="gender">
+          <mat-option [value]="null" disabled>Select a Gender</mat-option>
+          <mat-option *ngFor="let gender of genders" [value]="gender.id">{{gender.name}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-4  ">
+      <div class="float-start">
+        <button (click)="clearForm()" class="btn-clear" color="warn" mat-stroked-button type="button">
+          <mat-icon> clear_all</mat-icon>
+          Clear
+        </button>&nbsp;
+      </div>
+    </div>
+
 
   </div>
-  <div class="col-lg-4">
-    <mat-form-field appearance="outline" class="example-form-field">
-      <mat-label>Index</mat-label>
-      <input (keyup)="search()" formControlName="index" matInput type="text">
-    </mat-form-field>
-  </div>
-  <div class="col-lg-4">
-   <mat-form-field appearance="outline" >
-     <mat-label>Gender</mat-label>
-     <mat-select (selectionChange)="search()" formControlName="gender">
-     <mat-option [value]="null"  disabled>Select a Gender</mat-option>
-     <mat-option *ngFor="let gender of genders"[value]="gender.id">{{gender.name}}</mat-option>
-     </mat-select>
-   </mat-form-field>
-  </div>
-
-  <div class="col-lg-4  ">
-            <div class="float-start">
-    <button  class="btn-clear" color="warn" mat-stroked-button type="button">Clear</button>&nbsp;
-            </div>
-  </div>
-
-
-</div>
 </form>
 
 <!--<div class="row">-->
 <div class="table-responsive  m-0 p-0">
 
-  <table  [dataSource]="students" class="w-100" mat-table>
+  <table [dataSource]="students" class="w-100" mat-table>
     <ng-container matColumnDef="id">
       <th *matHeaderCellDef mat-header-cell> ID</th>
       <td *matCellDef="let student" mat-cell> {{student.id}} </td>
@@ -90,13 +93,13 @@
       <td *matCellDef="let student" mat-cell> {{student.gender?.['name']}} </td>
     </ng-container>
 
-<!--    <ng-container matColumnDef="image_id">-->
-<!--      <th *matHeaderCellDef mat-header-cell> Image</th>-->
-<!--      <td *matCellDef="let student" mat-cell>-->
-<!--        <img alt=""  height="150px" src="data:image/jpeg;base64, {{ student.image.image }}" mat-card-image width="180px" >-->
+    <!--    <ng-container matColumnDef="image_id">-->
+    <!--      <th *matHeaderCellDef mat-header-cell> Image</th>-->
+    <!--      <td *matCellDef="let student" mat-cell>-->
+    <!--        <img alt=""  height="150px" src="data:image/jpeg;base64, {{ student.image.image }}" mat-card-image width="180px" >-->
 
-<!--      </td>-->
-<!--    </ng-container>-->
+    <!--      </td>-->
+    <!--    </ng-container>-->
     <!--      buttons-->
 
     <ng-container matColumnDef="more-col">
@@ -110,10 +113,10 @@
     </ng-container>
 
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr *matRowDef="let row; columns: displayedColumns;" mat-row></tr>
   </table>
-  <button   class="mat-flat-sm" color="primary" mat-flat-button routerLink="../mainWindow">
+  <button class="mat-flat-sm" color="primary" mat-flat-button routerLink="../mainWindow">
     <mat-icon>arrow_back</mat-icon>
     Back
   </button>

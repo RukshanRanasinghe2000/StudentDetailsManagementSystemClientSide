@@ -69,5 +69,10 @@ export class StudentTableComponent implements OnInit {
     }
   }
 
+  clearForm() {
+    this.studentSearchForm.reset();
+    this.loadAll();
+  }
+
 
 }
