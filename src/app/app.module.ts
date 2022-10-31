@@ -16,12 +16,14 @@ import {MatSelectModule} from "@angular/material/select";
 import {ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { StudentDetailComponent } from './views/student-detail/student-detail.component';
+import { MainWindowComponent } from './views/main-window/main-window.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StudentTableComponent,
     StudentDetailComponent,
+    MainWindowComponent,
 
 
 

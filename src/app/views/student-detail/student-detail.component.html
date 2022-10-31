@@ -1,1 +1,55 @@
-<p>student-detail works!</p>
+
+<div *ngIf="student!==null">
+<header class="row">
+  <div class ="col-lg-6">
+    <h1>More details of {{student.name}}</h1>
+  </div>
+  <div class = "col-lg-6 text-right">
+    <ol class = "breadcrumb float-end bg-transparent">
+      <li class="breadcrumb-item">Student</li>
+      <li class="breadcrumb-item active" aria-current="page">Details</li>
+      <li class="breadcrumb-item active" aria-current="page">{{student.name}}</li>
+    </ol>
+  </div>
+</header>
+
+
+
+<table >
+
+  <tr>
+    <td>Name :</td>
+    <td>{{student.name}}</td> <td rowspan="6">
+    <img alt="" height="150px" src="data:image/jpeg;base64,{{ student.image?.['image'] }}" mat-card-image
+         width="180px">
+
+  </td>
+  </tr>
+  <tr>
+    <td>Date of Birth :</td>
+    <td>{{student.dob}}</td>
+  </tr>
+  <tr>
+    <td>Address :</td>
+    <td>{{student.address}}</td>
+  </tr>
+  <tr>
+    <td>Mobile :</td>
+    <td>{{student.mobile}}</td>
+  </tr>
+  <tr>
+    <td>Email :</td>
+    <td>{{student.email}}</td>
+  </tr>
+  <tr>
+    <td>Gender :</td>
+    <td>{{student.gender?.['name']}}</td>
+  </tr>
+</table>
+</div>
+<div>
+    <button class="mat-flat-sm" color="primary" mat-flat-button routerLink="/students/">
+      <mat-icon>arrow_back</mat-icon>
+      Back
+    </button>
+</div>
