@@ -56,7 +56,7 @@ export class StudentTableComponent implements OnInit {
     console.log(searchGender);
     let searchText = '';
     if(searchName != null && searchGender != null && searchIndex != null){
-     // searchText = "name=" + searchName + "index=" + searchIndex + "&gender=" +searchGender;
+     searchText = "name=" + searchName + "index=" + searchIndex + "&gender=" +searchGender;
     }else if (searchName != null){
       searchText = "name/" + searchName
     }else if (searchIndex != null){

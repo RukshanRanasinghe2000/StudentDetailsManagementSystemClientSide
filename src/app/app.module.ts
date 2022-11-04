@@ -17,6 +17,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import { StudentDetailComponent } from './views/student-detail/student-detail.component';
 import { MainWindowComponent } from './views/main-window/main-window.component';
+import { StudentFromComponent } from './views/student-from/student-from.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MainWindowComponent } from './views/main-window/main-window.component';
     StudentTableComponent,
     StudentDetailComponent,
     MainWindowComponent,
+    StudentFromComponent,
 
 
 

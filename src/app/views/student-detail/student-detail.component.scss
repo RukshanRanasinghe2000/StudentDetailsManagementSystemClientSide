@@ -1,3 +1,23 @@
+
+html{
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+html::-webkit-scrollbar{
+  width:1.4rem;
+}
+
+html::-webkit-scrollbar-track{
+  background:#222;
+}
+
+html::-webkit-scrollbar-thumb{
+  background:var(--yellow);
+}
+
+
+
 header{
   background: #ecf0f5;
   padding-bottom: 10px;
@@ -11,5 +31,45 @@ header{
   ol{
     margin-top: 6px;
   }
+
+}
+.div-coloumn{
+  padding-bottom: 50px;
+
+}
+
+
+
+.div-coloumn-label{
+  padding-bottom: 50px;
+  //padding-right: 200px !important;
+  padding-left: 70px !important;
+  text-align: left;
+  padding: -50px;
+  width: 300px;
+
+}
+
+.div-coloumn-main{
+  padding-left: 70px;
+  padding-top: 70px;
+
+}
+.div-coloumn-data{
+  //padding-right: 700px;
+}
+.div-coloumn-img{
+  padding-right: 50px;
+}
+
+
+.mat-text-right{
+  padding-top: 70px;
+  align-content: center;
+
+}
+.div-coloumn-main-idName{
+  //padding-left: 50px;
+  padding-top: 70px;
 
 }
